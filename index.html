@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inovação EcoCopo - Projeto Sustentável</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-eco { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
+        .hidden { display: none; }
+        .modal-blur { backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="font-sans text-slate-900 bg-white">
+
+    <!-- SEÇÃO 1: APRESENTAÇÃO DO PRODUTO (HERO) -->
+    <header class="gradient-eco min-h-[80vh] flex items-center justify-center px-6 border-b border-green-100">
+        <div class="max-w-4xl text-center space-y-8">
+            <div class="inline-block bg-green-200 text-green-800 px-6 py-2 rounded-full text-xs font-black tracking-widest uppercase shadow-sm">
+                Inovação & Sustentabilidade 2026
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black leading-tight text-slate-800">
+                O futuro cabe no seu <span class="text-green-600">bolso.</span>
+            </h1>
+
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Apresentamos uma solução de economia circular: um copo ultra-dobrável de alta durabilidade, protegido por uma embalagem de papel-semente que regenera o ecossistema.
+            </p>
+
+            <div class="pt-6">
+                <button onclick="abrirModal()" class="bg-slate-900 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:bg-green-700 shadow-2xl transition-all transform hover:scale-105">
+                    SIMULAR MEU IMPACTO
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO 2: IMPACTO NO EMPREENDEDORISMO (SEU TEXTO) -->
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-bold uppercase tracking-widest text-sm">Visão de Negócio</span>
+                <h2 class="text-4xl font-black text-slate-800 mt-2 italic">"Impacto no empreendedorismo"</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Coluna de Texto -->
+                <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                    <p>
+                        O empreendedor que utiliza copos descartáveis em pequenos comércios e eventos locais geralmente foca em <strong>praticidade, baixo custo operacional e higiene</strong>, especialmente em cenários de alto volume de clientes.
+                    </p>
+                    <p>
+                        Esse perfil busca soluções que evitem custos com lavagem, energia e quebra de materiais, sendo comum em locais como lanchonetes, food trucks, organizadores de festas e pequenos escritórios.
+                    </p>
+                    <div class="pt-6 border-l-4 border-green-500 pl-6 bg-green-50 p-4 rounded-r-xl italic text-slate-700">
+                        "Nossa inovação resolve a dor logística do descarte sem comprometer a agilidade do pequeno negócio."
+                    </div>
+                </div>
+
+                <!-- Coluna de Diferenciais Técnicos -->
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="bg-slate-50 p-6 rounded-3xl flex items-start gap-4 border border-slate-100 shadow-sm">
+                        <div class="bg-green-100 p-3 rounded-xl text-green-600">🚀</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Praticidade Total</h4>
+                            <p class="text-sm text-slate-500 text-pretty">Fácil armazenamento e manuseio rápido para alto fluxo de clientes.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-3xl flex items-start gap-4 border border-slate-100 shadow-sm">
+                        <div class="bg-green-100 p-3 rounded-xl text-green-600">💰</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Baixo Custo de Manutenção</h4>
+                            <p class="text-sm text-slate-500">Elimina a necessidade de lavagem industrial, economizando água e energia.</p>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-3xl flex items-start gap-4 border border-slate-100 shadow-sm">
+                        <div class="bg-green-100 p-3 rounded-xl text-green-600">🧼</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Higiene e Segurança</h4>
+                            <p class="text-sm text-slate-500 text-pretty">Material atóxico que atende aos padrões sanitários para eventos locais.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center text-sm">
+        <p>© 2026 Projeto de Inovação EcoCopo. Sustentabilidade Proativa.</p>
+    </footer>
+
+    <!-- MODAL INTERATIVO (QUESTIONÁRIO) -->
+    <div id="modal" class="fixed inset-0 bg-slate-900/60 hidden items-center justify-center z-50 p-4 modal-blur">
+        <div class="bg-white rounded-[2.5rem] max-w-md w-full p-10 shadow-2xl relative">
+            
+            <button onclick="fecharModal()" class="absolute top-8 right-8 text-slate-300 hover:text-slate-600 text-3xl">&times;</button>
+
+            <!-- ETAPA 1 -->
+            <div id="etapa1">
+                <h2 class="text-2xl font-black text-slate-800 mb-2">Diagnóstico de Uso</h2>
+                <p class="text-slate-500 mb-8 font-medium">Quantos descartáveis você (ou seu negócio) usa por semana?</p>
+                <div class="space-y-4">
+                    <button onclick="proximaEtapa(5)" class="w-full bg-slate-50 p-5 rounded-2xl hover:bg-green-600 hover:text-white transition-all text-left font-bold border border-slate-100 shadow-sm">☕ 1 a 5 copos (Baixo)</button>
+                    <button onclick="proximaEtapa(15)" class="w-full bg-slate-50 p-5 rounded-2xl hover:bg-green-600 hover:text-white transition-all text-left font-bold border border-slate-100 shadow-sm">☕ 6 a 25 copos (Médio)</button>
+                    <button onclick="proximaEtapa(50)" class="w-full bg-slate-50 p-5 rounded-2xl hover:bg-green-600 hover:text-white transition-all text-left font-bold border border-slate-100 shadow-sm">☕ Mais de 25 copos (Alto)</button>
+                </div>
+            </div>
+
+            <!-- ETAPA 2 -->
+            <div id="etapa2" class="hidden text-center">
+                <h2 class="text-2xl font-black text-slate-800 mb-2">Ciclo de Regeneração</h2>
+                <p class="text-slate-500 mb-8 font-medium">Qual semente melhoraria o ambiente do seu negócio?</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <button onclick="finalizar('Manjericão')" class="p-6 bg-slate-50 rounded-3xl hover:border-green-500 border-2 border-transparent transition-all">
+                        <span class="text-4xl block mb-2">🌿</span>
+                        <span class="font-bold text-slate-700">Manjericão</span>
+                    </button>
+                    <button onclick="finalizar('Rúcula')" class="p-6 bg-slate-50 rounded-3xl hover:border-green-500 border-2 border-transparent transition-all">
+                        <span class="text-4xl block mb-2">🍃</span>
+                        <span class="font-bold text-slate-700">Rúcula</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ETAPA 3 (RESULTADO FINAL) -->
+            <div id="etapa3" class="hidden text-center">
+                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h2 class="text-2xl font-black text-slate-800 mb-2">Potencial de Mudança</h2>
+                <p class="text-slate-500 mb-6 text-sm">Este projeto evitaria o descarte anual de:</p>
+                
+                <div class="bg-slate-900 text-white p-8 rounded-[2rem] mb-8 shadow-xl">
+                    <span id="valorFinal" class="text-6xl font-black block text-green-400">0</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Descartáveis no Meio Ambiente</span>
+                </div>
+
+                <p class="text-xs text-slate-400 mb-8 italic">Seu protótipo acompanharia sementes de <span id="plantinha" class="text-green-600 font-bold"></span>.</p>
+
+                <button onclick="fecharModal()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-700 transition-all">
+                    CONCLUIR SIMULAÇÃO
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE CONTROLE -->
+    <script>
+        let consumo = 0;
+
+        function abrirModal() {
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal').classList.add('flex');
+        }
+
+        function fecharModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('flex');
+            // Resetar etapas
+            document.getElementById('etapa1').classList.remove('hidden');
+            document.getElementById('etapa2').classList.add('hidden');
+            document.getElementById('etapa3').classList.add('hidden');
+        }
+
+        function proximaEtapa(valor) {
+            consumo = valor;
+            document.getElementById('etapa1').classList.add('hidden');
+            document.getElementById('etapa2').classList.remove('hidden');
+        }
+
+        function finalizar(semente) {
+            const total = consumo * 52;
+            document.getElementById('valorFinal').innerText = total;
+            document.getElementById('plantinha').innerText = semente;
+
+            document.getElementById('etapa2').classList.add('hidden');
+            document.getElementById('etapa3').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
