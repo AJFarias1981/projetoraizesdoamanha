@@ -97,9 +97,12 @@
                     <p class="text-slate-500">Qual semente você quer levar no seu copo sustentável?</p>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-4">
                         <label><input type="radio" name="brinde" value="Manjericão" class="hidden" checked><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌿</span><p class="text-xs font-bold mt-2">Manjericão</p></div></label>
-                        <label><input type="radio" name="brinde" value="Pimenta" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌶️</span><p class="text-xs font-bold mt-2">Pimenta</p></div></label>
-                        <label><input type="radio" name="brinde" value="Alecrim" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌲</span><p class="text-xs font-bold mt-2">Alecrim</p></div></label>
-                        <label><input type="radio" name="brinde" value="Girassol" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌻</span><p class="text-xs font-bold mt-2">Girassol</p></div></label>
+                     <label><input type="radio" name="brinde" value="Rúcula" class="hidden" checked><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🥗</span><p class="text-xs font-bold mt-2">Rúcula</p></div></label>
+                    <label><input type="radio" name="brinde" value="Salsa" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌿</span><p class="text-xs font-bold mt-2">Salsa</p></div></label>
+                    <label><input type="radio" name="brinde" value="Cenoura" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🥕</span><p class="text-xs font-bold mt-2">Cenoura</p></div></label>
+                    <label><input type="radio" name="brinde" value="Pimenta Biquinho" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌶️</span><p class="text-xs font-bold mt-2">P. Biquinho</p></div></label>
+                    <label><input type="radio" name="brinde" value="Tomate" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🍅</span><p class="text-xs font-bold mt-2">Tomate</p></div></label>
+                    <label><input type="radio" name="brinde" value="Margarida" class="hidden"><div class="card-semente p-4 rounded-2xl bg-white shadow-sm"><span class="text-4xl">🌼</span><p class="text-xs font-bold mt-2">Margarida</p></div></label>
                     </div>
                     <button onclick="finalizar()" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-xl hover:bg-emerald-600 transition-all">RESGATAR BRINDE</button>
                 </div>
@@ -137,7 +140,7 @@
 
         function finalizar() {
             const semente = document.querySelector('input[name="brinde"]:checked').value;
-            const icones = { "Manjericão": "🌿", "Pimenta": "🌶️", "Alecrim": "🌲", "Girassol": "🌻" };
+            const icones = { "Manjericão": "🌿", "Rúcula": "🥗", "Salsa": "🌿", "Cenoura": "🥕", "Pimenta Biquinho": "🌶️", "Tomate": "🍅", "Margarida": "🌼" };
             document.getElementById('iconeFinal').innerText = icones[semente];
             document.getElementById('resumoBrinde').innerText = "Você escolheu o Brinde de " + semente + "!";
             irParaEtapa(4);
